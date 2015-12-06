@@ -1,14 +1,20 @@
 package cn.sinobest.demo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
- 
+
+/**
+ * Decription:
+ * æœåŠ¡æä¾›è€…
+ *
+ * @author chenjianhua
+ */
 public class Provider {
  
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationContext-provider.xml"});
         context.start();
- 
-        System.in.read(); // °´ÈÎÒâ¼üÍË³ö
+
+        System.in.read(); // æŒ‰ä»»æ„é”®é€€å‡º
     }
  
 }

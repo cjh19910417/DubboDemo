@@ -3,16 +3,25 @@ package cn.sinobest.demo;
 import cn.sinobest.share.dubbo.Hello;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * Decription:
+ * æœåŠ¡æ¶ˆè´¹è€…
+ *
+ * @author chenjianhua
+ */
 public class Consumer {
  
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationContext-consumer.xml"});
         context.start();
- 
-        Hello service = (Hello)context.getBean("helloService"); // »ñÈ¡Ô¶³Ì·şÎñ´úÀí
-        String hello = service.sayHello("chenjianhua"); // Ö´ĞĞÔ¶³Ì·½·¨
- 
-        System.out.println( hello ); // ÏÔÊ¾µ÷ÓÃ½á¹û
+
+        Hello service = (Hello) context.getBean("helloService"); // è·å–è¿œç¨‹æœåŠ¡ä»£ç†
+        for (int i = 0; i < 100; i++) {
+            String hello = service.sayHello("World!-" + i); // æ‰§è¡Œè¿œç¨‹æ–¹æ³•
+
+            System.out.println(hello); // æ˜¾ç¤ºè°ƒç”¨ç»“æœ
+        }
+
     }
  
 }

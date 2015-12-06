@@ -1,13 +1,14 @@
 package cn.sinobest.share.dubbo.impl;
 
 import cn.sinobest.share.dubbo.Hello;
+import com.alibaba.dubbo.config.annotation.Service;
 
 /**
  * Decription:
- * Created on 2015/12/4 0004
  *
  * @author chenjianhua
  */
+@Service(version = "1.0")
 public class HelloImpl implements Hello {
     @Override
     public String sayHello(String name) {
